@@ -1,0 +1,30 @@
+
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <xs:complexType name="content-metadata">
+        <xs:element name="author" type="simple-user"/>
+        <xs:element name="owner" type="simple-user"/>
+        <xs:element name="create-date" type="xs:dateTime"/>
+        <xs:element name="last-modified-date" type="xs:dateTime"/>
+    </xs:complexType>
+
+    <xs:complexType name="simple-user">
+        <xs:element name="user-name" type="xs:string" />
+        <xs:element name="first-name" type="xs:string"/>
+        <xs:element name="last-name" type="xs:string"/>
+        <xs:element name="middle-names" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:element name="note">
+        <xs:element name="metadata" type="content-metadata"/>
+        <xs:element name="note-contents" type="xs:string"/>
+    </xs:element>
+
+</xs:schema>
+
+<!--
+    Useful Links:
+        - https://www.w3schools.com/xml/schema_intro.asp
+        - https://stackoverflow.com/questions/3403644/what-is-the-purpose-of-xsd-files
+ -->
